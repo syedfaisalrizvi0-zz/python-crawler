@@ -128,16 +128,6 @@ class crawler:
         for a in BeautifulSoup(requests.get(url).text,"html.parser").find_all('a',href=True):
             link = self.make_link(a['href'],url)
             sitemap_sql = "".format()
-
-'''app =Flask(__name__)
-@app.route('/')
-def search(self,data):
-    con = self.con 
-    conn = self.conn
-    search_sql  ="SELECT * FROM `crawl` WHERE `title` OR `dis` LIKE '%{}%' ".format(data)
-    con.execute(search_sql)
-    data = con.fetchall()
-    return data'''
 if __name__ == '__main__':
     obj = crawler()
     obj.sitemap('https://www.fatbit.com/profie')
