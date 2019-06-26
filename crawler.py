@@ -127,7 +127,7 @@ class crawler:
         conn  =self.conn
         for a in BeautifulSoup(requests.get(url).text,"html.parser").find_all('a',href=True):
             link = self.make_link(a['href'],url)
-            sitemap_sql = "".format()
+            sitemap_sql = "".format() 
 if __name__ == '__main__':
     obj = crawler()
     obj.sitemap('https://www.fatbit.com/profie')
